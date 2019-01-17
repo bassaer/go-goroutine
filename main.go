@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func work(done <-chan interface{}, msg <-chan string) <-chan interface{} {
@@ -36,10 +36,10 @@ func main() {
 		close(done)
 	}()
 
-    go func() {
-        time.Sleep(1 * time.Second)
-        msg <- "world"
-    }()
+	go func() {
+		time.Sleep(1 * time.Second)
+		msg <- "world"
+	}()
 
 	<-terminated
 
